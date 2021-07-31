@@ -52,6 +52,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div class="text-danger d-flex justify-content-center d-none" id="differentTeamsError">
+                        É necessário escolher dois times distintos.
+                    </div>
                     <div class="d-flex justify-content-around">
                         <div class="p-2">
                             <div class="px-2">
@@ -65,7 +68,7 @@
                                     </select>
                                 </div>
                                 <div class="w-25">
-                                    <input type="number" class="form-control" value="0"  id="scoreOne">
+                                    <input type="number" class="form-control" value="0"  id="scoreOne" min="0">
                                 </div>
                             </div>
                         </div>
@@ -80,7 +83,7 @@
                             </div>
                             <div class="d-flex px-2">
                                 <div class="w-25">
-                                    <input type="number" class="form-control" value="0" id="scoreTwo">
+                                    <input type="number" class="form-control" value="0" id="scoreTwo" min="0">
                                 </div>
                                 <div class="w-75 px-2">
                                     <select class="form-select"  id="selectOutHomeTeam">

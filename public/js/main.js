@@ -8,12 +8,19 @@ $(document).ready(function() {
     });
 
     $("#btnSaveConfrontation").on('click', function () {
+        if ($('#selectHomeTeam').val() === $('#selectOutHomeTeam').val()) {
+            $('#differentTeamsError').removeClass('d-none');
+            return;
+        }
+
         const data = {
             score_team_one: $('#scoreOne').val(),
             score_team_two: $('#scoreTwo').val(),
             team_one_id: $('#selectHomeTeam').val(),
             team_two_id: $('#selectOutHomeTeam').val(),
         };
+        
+        $('#differentTeamsError').addClass('d-none');
 
         $.ajax({
             type: 'POST',
@@ -24,6 +31,9 @@ $(document).ready(function() {
             $('#confrontationModal').modal('hide');
         });
     });
+
+    $('#scoreOne').on('keypress', isNumber);
+    $('#scoreTwo').on('keypress', isNumber);
 });
 
 function fillSelect(selectId, data) {
@@ -93,4 +103,13 @@ function getPositionClass(index) {
     if (index < 7) return 'libertadores';
     if (index < 16) return 'sul-americana';
     return 'down';
+}
+
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
 }
