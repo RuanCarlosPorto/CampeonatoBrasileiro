@@ -1,0 +1,31 @@
+.bottom-aligned {
+    position: absolute;
+    bottom: 25%;
+}
+
+.centralized {
+    margin: auto;
+    width: 60%;
+}
+
+.title {
+    color: #0E2A53;
+}
+
+#championshipTable img {
+    width: 20px;
+    height: 20px;
+    margin: 4px;
+}
+
+#championshipTable .first {
+    color: rgb(25, 228, 160);
+}
+
+#championshipTable .libertadores {
+    color: rgb(34, 224, 75);
+}
+
+#championshipTable .down {
+    color: rgb(224, 34, 34);
+}
